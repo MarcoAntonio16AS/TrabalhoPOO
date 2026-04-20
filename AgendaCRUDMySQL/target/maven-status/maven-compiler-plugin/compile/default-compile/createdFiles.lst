@@ -1,0 +1,7 @@
+br\edu\agendacrudmysql\view\ConsoleView.class
+br\edu\agendacrudmysql\AgendaCRUDMySQL.class
+br\edu\agendacrudmysql\dao\ContatoDAO.class
+br\edu\agendacrudmysql\model\Contato.class
+br\edu\agendacrudmysql\controller\ContatoController.class
+br\edu\agendacrudmysql\service\ContatoService.class
+br\edu\agendacrudmysql\dao\ConnectionFactory.class
