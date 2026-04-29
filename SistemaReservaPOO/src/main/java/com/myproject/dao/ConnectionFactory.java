@@ -15,10 +15,10 @@ a porta, usuário e senha.
 
 public class ConnectionFactory {
 
-    private static final String URL = "jdbc:mysql://localhost:3306/sistema_reserva";
+    private static final String URL = "jdbc:postgresql://localhost:5432/sistema_reserva";
     
-    private static final String USER = "root";
-    private static final String PASSWORD = "sua_senha_aqui";
+    private static final String USER = "minha_senha";
+    private static final String PASSWORD = "minha_senha";
 
     public static Connection conectar() {
         try {
