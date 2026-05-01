@@ -15,10 +15,12 @@ a porta, usuário e senha.
 
 public class ConnectionFactory {
 
-    private static final String URL = "jdbc:mysql://localhost:3306/sistema_reserva";
+    private static final String URL = "jdbc:postgresql://"
+            + "ep-jolly-lab-acu2a2fy-pooler.sa-east-1.aws.neon.tech/"
+            + "neondb?sslmode=require";
     
-    private static final String USER = "root";
-    private static final String PASSWORD = "sua_senha_aqui";
+    private static final String USER = "neondb_owner";
+    private static final String PASSWORD = "npg_sVqNTJ2bWg3p";
 
     public static Connection conectar() {
         try {
