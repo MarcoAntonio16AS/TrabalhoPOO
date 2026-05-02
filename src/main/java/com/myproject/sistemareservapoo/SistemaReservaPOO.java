@@ -11,6 +11,8 @@ de forma que a interface lá contida rode, e as operações possam dar início.
 public class SistemaReservaPOO {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        
+        ReservasInterface view  = new ReservasInterface();
+        view.Iniciar();
     }
 }

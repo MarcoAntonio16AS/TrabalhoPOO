@@ -6,13 +6,62 @@ import java.util.ArrayList;
 import java.util.List;
 
 /*
-    DAO: Camada respons√°vel pelo acesso aos dados presentes dentro do Banco de 
-dados o qual ser√° utilizado. Enquanto o "ConnectionFactory" cria a conex√£o entre 
+    DAO: Camada respons·vel pelo acesso aos dados presentes dentro do Banco de 
+dados o qual ser· utilizado. Enquanto o "ConnectionFactory" cria a conex„o entre 
 o db e o projeto, centralizando tudo em uma file apenas; o DAO tem como objetivo
-acessar esses dados e criar modifica√ß√µes diretamente dentro do banco, em suas
+acessar esses dados e criar modificaÁıes diretamente dentro do banco, em suas
 tabelas e em seus dados. Seja inserir, deletar, ou selecionar.
 */
 
 public class ReservasDAO {
+    //N„o È necess·rio colocar novamente o mÈtodo construtor + encapsulamento +
+    //getter e setter, isso devido · camada Model (onde j· existe isso) estar
+    //inserida. Logo resta apenas fazer o resto dos comandos do banco de dados
+    
+    public void inserir(ReservasModel Reserva){
+        
+        String sql = "INSERT into Reserva(nome) VALUES (?)";
+        
+        try(
+                Connection conn = ConnectionFactory.conectar();
+                PreparedStatement stmt = conn.prepareStatement(sql)
+            )   {
+            
+            stmt.setString(1, Reserva.getNome());
+            stmt.executeUpdate();
+            System.out.println("Reserva realizada com sucesso!");
+        } catch (SQLException e) {
+            System.out.println("Erro ao inserir " + e.getMessage());
+        }
+    }
+    
+    public List<ReservasModel> Listar() {
+        
+        List<ReservasModel> lista = new ArrayList<>();
+        
+        String sql = "SELECT * FROM Reserva";
+        
+        try(
+                Connection conn = ConnectionFactory.conectar();
+                PreparedStatement stmt = conn.prepareStatement(sql);
+                ResultSet rs = stmt.executeQuery()
+            )   {
+            
+            while(rs.next()) {
+                
+                ReservasModel r = new ReservasModel();
+                
+                r.setId(rs.getInt("id"));
+                r.setNome(rs.getString("nome"));
+                
+                lista.add(r);
+            }
+            
+        } catch (SQLException e) {
+            System.out.println("Erro ao listar: " + e.getMessage());
+        }
+        
+        return lista; 
+    }
     
 }

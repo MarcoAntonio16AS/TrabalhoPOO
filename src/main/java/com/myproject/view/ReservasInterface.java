@@ -15,4 +15,20 @@ pode ou não fazer dentro da aplicação.
 
 public class ReservasInterface {
     
+    private final ReservasController controller = new ReservasController();
+    
+    public void Iniciar(){
+        
+        System.out.println("==== Teste MVC =====");
+        
+        controller.criarReserva("Teste MVC");
+        
+        List<ReservasModel> lista = controller.listarReservas();
+        
+        for(ReservasModel r : lista) {
+            System.out.println(r.getId() + " - " + r.getNome());
+        }
+        
+    }
+    
 }

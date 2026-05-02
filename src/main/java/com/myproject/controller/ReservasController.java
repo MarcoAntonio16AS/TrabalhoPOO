@@ -13,4 +13,14 @@ dados da View, chama o Service, e depois retorna os dados para a View.
 
 public class ReservasController {
     
+    private ReservasService service = new ReservasService();
+    
+    public void criarReserva(String nome) {
+        service.salvarReserva(nome);
+    }
+    
+    public List<ReservasModel> listarReservas(){
+        return service.listarReservas();
+    }
+    
 }
