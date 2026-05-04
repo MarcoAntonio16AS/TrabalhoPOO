@@ -1,4 +1,5 @@
 package com.myproject.model;
+import java.time.LocalDateTime;
 
 /*
     MODEL: É o modelo no qual o projeto se baseia e vai se construir. Aqui terá
@@ -6,57 +7,45 @@ as nossas classes, objetos, dados encapsulados, método construtor e os getters 
 setters, uma vez que os parâmetros serão privados.
 */
 
-public abstract class ReservasModel {
-    private int id, id_cliente;
-    private String nome_cliente, doc_cliente, inicio_res, fim_res;
-    private float valor_res;
+public class ReservasModel {
+    private int id_reserva, id_cliente, id_recurso;
+    private LocalDateTime inicio_reserva, fim_reserva;
+    private float total_reserva;
+    private String status_reserva;
     
 
     //Método construtor vazio => Vai ser preenchido com os dados!
     public ReservasModel(){
-    }
-    
-//==============================================================================
-    
-    /*Método construtor somente com String => ReservasService vai requerer tal
-    devido à validação que deverá ser feita, ou seja, essas Strings não poderão
-    estar VAZIAS (Regra de Negócio)*/
-    
-    public ReservasModel(String nome_cliente, String doc_cliente,
-                         String inicio_res, String fim_res) {
-        
-        this.nome_cliente = nome_cliente;
-        this.doc_cliente = doc_cliente;
-        this.inicio_res = inicio_res;
-        this.fim_res = fim_res;
     }
         
 //==============================================================================
     
     //Método construtor completo:
 
-    public ReservasModel(int id, int id_cliente, String nome_cliente, 
-                         String doc_cliente, String inicio_res, String fim_res, 
-                         float valor_res) {
-        this.id = id;
-        this.id_cliente = id_cliente;
-        this.nome_cliente = nome_cliente;
-        this.doc_cliente = doc_cliente;
-        this.inicio_res = inicio_res;
-        this.fim_res = fim_res;
-        this.valor_res = valor_res;
-    }
+        public ReservasModel(int id_reserva, int id_cliente, int id_recurso, 
+                             LocalDateTime inicio_reserva, String status_reserva, 
+                             LocalDateTime fim_reserva, float total_reserva) {
+            
+            this.id_reserva = id_reserva;
+            this.id_cliente = id_cliente;
+            this.id_recurso = id_recurso;
+            this.inicio_reserva = inicio_reserva;
+            this.fim_reserva = fim_reserva;
+            this.status_reserva = status_reserva;
+            this.total_reserva = total_reserva;
+        }
+
     
 //==============================================================================    
     
         //Getters and Setters:
 
-    public int getId() {
-        return id;
+    public int getId_reserva() {
+        return id_reserva;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setId_reserva(int id_reserva) {
+        this.id_reserva = id_reserva;
     }
 
     public int getId_cliente() {
@@ -67,46 +56,44 @@ public abstract class ReservasModel {
         this.id_cliente = id_cliente;
     }
 
-    public String getNome_cliente() {
-        return nome_cliente;
+    public int getId_recurso() {
+        return id_recurso;
     }
 
-    public void setNome_cliente(String nome_cliente) {
-        this.nome_cliente = nome_cliente;
+    public void setId_recurso(int id_recurso) {
+        this.id_recurso = id_recurso;
     }
 
-    public String getDoc_cliente() {
-        return doc_cliente;
+    public LocalDateTime getInicio_reserva() {
+        return inicio_reserva;
     }
 
-    public void setDoc_cliente(String doc_cliente) {
-        this.doc_cliente = doc_cliente;
+    public void setInicio_reserva(LocalDateTime inicio_reserva) {
+        this.inicio_reserva = inicio_reserva;
     }
 
-    public String getInicio_res() {
-        return inicio_res;
+    public LocalDateTime getFim_reserva() {
+        return fim_reserva;
     }
 
-    public void setInicio_res(String inicio_res) {
-        this.inicio_res = inicio_res;
+    public void setFim_reserva(LocalDateTime fim_reserva) {
+        this.fim_reserva = fim_reserva;
     }
 
-    public String getFim_res() {
-        return fim_res;
+    public float getTotal_reserva() {
+        return total_reserva;
     }
 
-    public void setFim_res(String fim_res) {
-        this.fim_res = fim_res;
+    public void setTotal_reserva(float total_reserva) {
+        this.total_reserva = total_reserva;
     }
 
-    public float getValor_res() {
-        return valor_res;
+    public String getStatus_reserva() {
+        return status_reserva;
     }
 
-    public void setValor_res(float valor_res) {
-        this.valor_res = valor_res;
+    public void setStatus_reserva(String status_reserva) {
+        this.status_reserva = status_reserva;
     }
 
-    
-    
 }

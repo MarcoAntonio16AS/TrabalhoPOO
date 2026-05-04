@@ -1,4 +1,5 @@
 package com.myproject.model;
+import java.time.LocalDateTime;
 
 //Classe filha ReservasHora => Reserva para salas de Coworking!
 
@@ -11,12 +12,14 @@ public class ReservasHora extends ReservasModel {
 //==============================================================================
     
     //Método construtor prórpio da classe filha + atributos da do pai!
-    public ReservasHora(int id, int id_cliente, String nome_cliente, 
-                        String doc_cliente, String inicio_res, String fim_res, 
-                        float valor_res, int sala, int qtd_pessoas) {
+    public ReservasHora(int id_reserva, int id_cliente, int id_recurso, 
+                        LocalDateTime inicio_reserva, String status_reserva,
+                        LocalDateTime fim_reserva, float total_reserva,
+                        int sala, int qtd_pessoas) {
         
-        super(id, id_cliente, nome_cliente, doc_cliente, 
-              inicio_res, fim_res, valor_res); //Fazendo herança completa
+        //Fazendo herança completa
+        super(id_reserva, id_cliente, id_recurso, inicio_reserva,
+              status_reserva, fim_reserva, total_reserva); 
         
         this.sala = sala;
         this.qtd_pessoas = qtd_pessoas;
@@ -44,15 +47,15 @@ public class ReservasHora extends ReservasModel {
     @Override
     public String toString(){
         return "Reserva Coworking:{"
-                + "\nID = " + getId()
+                + "\nID_reserva = " + getId_reserva()
                 + "\nID_cliente = " + getId_cliente()
-                + "\nNome_cliente = " + getNome_cliente()
-                + "\nDocumento_cliente = " + getDoc_cliente()
+                + "\nID_recurso = " + getId_recurso()
+                + "\nStatus = " + getStatus_reserva()
                 + "\nNúmero da Sala = " + getSala()
                 + "\nQtd. Pessoas = " + getQtd_Pessoas()
-                + "\nPrazo de Início = " + getInicio_res()
-                + "\nPrazo de Término = " + getFim_res()
-                + "\nValor = " + getValor_res()
+                + "\nPrazo de Início = " + getInicio_reserva()
+                + "\nPrazo de Término = " + getFim_reserva()
+                + "\nValor Total = " + getTotal_reserva()
                 + "}" ;
                 
     }
