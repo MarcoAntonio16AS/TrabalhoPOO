@@ -13,6 +13,6 @@ public class SistemaReservaPOO {
     public static void main(String[] args) {
         
         ReservasInterface view  = new ReservasInterface();
-        view.Iniciar();
+        view.iniciarSistema();
     }
 }
