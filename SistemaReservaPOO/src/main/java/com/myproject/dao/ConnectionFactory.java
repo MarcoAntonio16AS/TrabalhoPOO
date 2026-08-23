@@ -20,8 +20,7 @@ public class ConnectionFactory {
             + "neondb?sslmode=require";
     
     private static final String USER = "neondb_owner";
-    private static final String PASSWORD = "************"; 
-    //Não vou deixar a senha do banco acessível, obviamente.
+    private static final String PASSWORD = "npg_sVqNTJ2bWg3p";
 
     public static Connection conectar() {
         try {
