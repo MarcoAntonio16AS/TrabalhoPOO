@@ -10,7 +10,7 @@ Banco de Dados MySQL o qual será utilizado. Para isso já foi definido e
 adicionado ao .xml o conector Java(mysql-connector-j).
 
     Para a criação dessa conexão, será adicionado o nome do Banco de Dados,
-a porta, usuário e senha.
+a porta, usuário e senha. O banco em questão está salvo em nuvem, a NeonDB
  */
 
 public class ConnectionFactory {
