@@ -11,7 +11,8 @@ Criei este **README.md** com o objetivo de apresentar o projeto desenvolvido por
 
 Abaixo, descrevo os objetivos e a proposta do trabalho — usando as próprias palavras do nosso professor! — para mostrar o que este projeto visa nos ensinar como alunos. Este documento também servirá como um norte, detalhando o processo e o passo a passo de como a realização do trabalho deve ser executada.
 
-Este projeto também possui objetivos de ser escalonado, como mostrado neste documento de [Objetivos](https://github.com/MarcoAntonio16AS/TrabalhoPOO/edit/master/Objetivos.md)
+Este projeto também possui objetivos de ser escalonado, como mostrado neste documento de [Objetivos](https://github.com/MarcoAntonio16AS/TrabalhoPOO/edit/master/Objetivos.md).
+
 Sem mais delongas... Segue a explicação da tarefa. Os documentos vinculados a ela estarão anexados ao final deste README.
 
 Muito obrigado pela leitura! ✨  
